@@ -1,2 +1,11 @@
 h1 Welcome#index
 p Find me in app/views/welcome/index.html.slim
+
+- if user_signed_in?
+  ul
+    li = link_to 'Account', [:edit, :user, :registration]
+    li = link_to 'Logout', [:destroy, :user, :session], method: :delete
+- else
+  ul
+    li = link_to 'Sign up', [:new, :user, :registration]
+    li = link_to 'Login', [:new, :user, :session]
