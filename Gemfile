@@ -13,6 +13,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -67,3 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use SLIM for html. Read more: https://github.com/slim-template/slim-rails
 gem 'slim-rails'
+
+# Read more: https://github.com/Semantic-Org/Semantic-UI-Rails-LESS
+gem 'less-rails-semantic_ui'
+gem 'autoprefixer-rails'
