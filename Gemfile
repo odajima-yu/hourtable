@@ -74,10 +74,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use SLIM for html. Read more: https://github.com/slim-template/slim-rails
 gem 'slim-rails'
 
-# Read more: https://github.com/Semantic-Org/Semantic-UI-Rails-LESS
-gem 'less-rails-semantic_ui'
-gem 'autoprefixer-rails'
-
 # Read more: https://github.com/plataformatec/devise
 gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3'
