@@ -24,6 +24,23 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # Read more: https://github.com/rweng/pry-rails
+  gem 'pry-rails'
+
+  # Read more: https://github.com/rspec/rspec-rails
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  # Read more: https://github.com/rspec/rspec-its
+  gem 'rspec-its'
+  # Read more: https://github.com/r7kamura/rspec-request_describer
+  gem 'rspec-request_describer'
+  # Read more: https://github.com/thoughtbot/shoulda-matchers
+  gem 'shoulda-matchers'
+  # Read more: https://github.com/thoughtbot/factory_girl_rails
+  gem 'factory_girl_rails'
+  # Read more: https://github.com/DatabaseCleaner/database_cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
