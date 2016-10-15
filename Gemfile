@@ -63,6 +63,9 @@ group :development do
 
   # Read more: https://github.com/slim-template/html2slim
   gem 'html2slim'
+
+  # Read more: https://github.com/ctran/annotate_models
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -74,3 +77,7 @@ gem 'slim-rails'
 # Read more: https://github.com/Semantic-Org/Semantic-UI-Rails-LESS
 gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
+
+# Read more: https://github.com/plataformatec/devise
+gem 'devise', '~> 4.2'
+gem 'omniauth', '~> 1.3'
