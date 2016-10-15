@@ -25,3 +25,5 @@ html
     = stylesheet_link_tag    'application', media: 'all'
   body
     = yield
+
+    == javascript_include_tag assets_path('main.js')

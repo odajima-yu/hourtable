@@ -66,6 +66,9 @@ group :development do
 
   # Read more: https://github.com/ctran/annotate_models
   gem 'annotate'
+
+  # Read more: https://github.com/ddollar/foreman
+  gem 'foreman'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -77,6 +80,3 @@ gem 'slim-rails'
 # Read more: https://github.com/plataformatec/devise
 gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3'
-
-# Read more: https://github.com/reactjs/react-rails
-gem 'react-rails'
