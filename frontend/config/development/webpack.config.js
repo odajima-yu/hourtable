@@ -1,6 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const LessPluginAutoPrefix = require('less-plugin-autoprefix');
+
+const autoprefixerBrowsers = ['last 2 versions', '> 1%', 'opera 12.1', 'bb 10', 'android 4'];
 
 module.exports = {
   entry: {
@@ -15,9 +18,9 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.js[x]?$/,
         loaders: ['react-hot-loader/webpack', 'babel?cacheDirectory=true,presets[]=es2015,presets[]=stage-2,presets[]=react'],
-        exclude: /node_modules/,
-        test: /\.js[x]?$/
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -26,14 +29,28 @@ module.exports = {
       {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+      },
+      {
+        test: /\.(jpg|png|otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+        loader: "file?name=public/dist/[path][name].[ext]"
       }
     ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      $: "jquery",
+      jquery: "jquery"
+    })
   ],
+  lessLoader: {
+    lessPlugins: [
+      new LessPluginAutoPrefix({ browsers: autoprefixerBrowsers })
+    ]
+  },
   resolve: {
     extensions: ['', '.js', '.css', '.less']
   },
