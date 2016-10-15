@@ -1,33 +1,48 @@
 const path = require('path');
 const webpack = require('webpack');
-const glob = require("glob");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: glob.sync("./frontend/js/*.js"),
+  entry: {
+    app: './frontend/app'
+  },
   output: {
     path: path.join(__dirname, 'public/dist'),
-    filename: '[name].js',  // このままならmain.jsが作成される
+    filename: '[name].js',
     publicPath: 'http://localhost:4000/',
     hot: true
   },
   module: {
     loaders: [
       {
-        loaders: ['react-hot', 'babel?cacheDirectory=true,presets[]=es2015,presets[]=stage-2,presets[]=react'],
+        loaders: ['react-hot-loader/webpack', 'babel?cacheDirectory=true,presets[]=es2015,presets[]=stage-2,presets[]=react'],
         exclude: /node_modules/,
         test: /\.js[x]?$/
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+      },
+      {
+        test: /\.sass$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
       }
     ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('[name].css')
   ],
   resolve: {
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.css', '.less']
   },
   devServer: {
     contentBase: '../public/dist',
     port: 4000
-  },
+  }
 };
