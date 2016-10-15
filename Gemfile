@@ -57,7 +57,13 @@ group :development do
   gem 'guard-rspec', require: false
   # Read more: https://github.com/guard/guard-livereload
   gem 'guard-livereload'
+
+  # Read more: https://github.com/slim-template/html2slim
+  gem 'html2slim'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use SLIM for html. Read more: https://github.com/slim-template/slim-rails
+gem 'slim-rails'
