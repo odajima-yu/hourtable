@@ -6,9 +6,13 @@ html
     == render 'layouts/favicon'
 
     == csrf_meta_tags
-    == javascript_include_tag 'application'
-    == stylesheet_link_tag    'application', media: 'all'
+    - if user_signed_in?
+      == stylesheet_link_tag assets_path('app.css')
+    - else
+      == javascript_include_tag 'application'
+      == stylesheet_link_tag    'application', media: 'all'
   body
     == yield
 
-    == javascript_include_tag assets_path('app.js')
+    - if user_signed_in?
+      == javascript_include_tag assets_path('app.js')
