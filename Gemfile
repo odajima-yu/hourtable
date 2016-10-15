@@ -77,3 +77,6 @@ gem 'slim-rails'
 # Read more: https://github.com/plataformatec/devise
 gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3'
+
+# Read more: https://github.com/reactjs/react-rails
+gem 'react-rails'
